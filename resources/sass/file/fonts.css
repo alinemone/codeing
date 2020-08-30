@@ -1,0 +1,18 @@
+@font-face {
+    font-family: iranyekan;
+    src: url(./fonts/iranyekan/eot/iranyekanweblight.eot);
+    src: url(./fonts/iranyekan/eot/iranyekanweblight.eot?#iefix) format("eot"),
+    url(./fonts/iranyekan/woff/iranyekanweblight.woff) format("woff"),
+    url(./fonts/iranyekan/ttf/iranyekanweblight.ttf) format("ttf");
+
+}
+
+@font-face {
+    font-family: iransans;
+    src: url(./fonts/iransans/eot/IRANSansWeb.eot);
+    src: url(./fonts/iransans/eot/IRANSansWeb.eot?#iefix) format("eot"),
+    url(./fonts/iransans/woff/IRANSansWeb.woff) format("woff"),
+    url(./fonts/iransans/ttf/IRANSansWeb.ttf) format("ttf");
+
+}
+

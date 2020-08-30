@@ -1,0 +1,96 @@
+<div  id="sidebar-wrapper">
+    <ul class="bg-fa list-group list-style-none navbar-nav list-group-flush pr-1 text-right h-100">
+        <li class="nav-item {{ request()->route()->named('UserPanel') ? ' active' : '' }}">
+            <a href="{{route('UserPanel')}}" class=" list-group-item list-group-item-action bg-fa ">  <i class="fas fa-house-user"></i>  داشبرد</a>
+        </li>
+        @can('create_product')
+        <li class="nav-item border-bottom">
+            <a href="#products" class="d-flex justify-content-between list-group-item border-bottom-0 list-group-item-action bg-light dropdown {{ active(route('user.products')) }} {{ active(route('user.products.disapproved')) }}" data-toggle="collapse" aria-expanded="true"> محصولات  <i class="fas fa-angle-down"></i></a>
+            <ul class="list-group list-style-none navbar-nav list-group-flush pr-2 w-100 collapse {{ active(route('user.products'),'show') }} {{ active(route('user.products.disapproved'),'show') }}" id="products" >
+                <li class="nav-item border-bottom {{ active(route('user.products')) }}">
+                    <a href="{{route('user.products')}}" class="list-group-item list-group-item-action bg-fa">محصولات تایید شده</a>
+                </li>
+                <li class="nav-item {{ active(route('user.products.disapproved')) }}">
+                    <a href="{{route('user.products.disapproved')}}" class="list-group-item list-group-item-action bg-fa">محصولات تایید نشده</a>
+                </li>
+            </ul>
+        </li>
+        @endcan
+        <li class="nav-item border-bottom {{ active(route('user.products.purchased')) }}">
+            <a href="{{route('user.products.purchased')}}" class="list-group-item list-group-item-action bg-fa">محصولات خریداری شده </a>
+        </li>
+
+        <li class="nav-item border-bottom">
+            <a href="#specifications" class="d-flex justify-content-between list-group-item border-bottom-0 list-group-item-action bg-light dropdown {{ active(route('profile_edit')) }}{{ active(route('account_edit')) }}{{ active(route('change_password')) }}" data-toggle="collapse" aria-expanded="true"> مشخصات  <i class="fas fa-angle-down"></i></a>
+            <ul class="list-group list-style-none navbar-nav list-group-flush pr-2 w-100 collapse {{ active(route('profile_edit'),'show') }}{{ active(route('account_edit'),'show') }}{{ active(route('change_password'),'show') }}" id="specifications" >
+                <li class="nav-item border-bottom {{active(route('account_edit'))}}">
+                    <a href="{{route('account_edit')}}" class="list-group-item list-group-item-action bg-fa">اطلاعات شخصی</a>
+                </li>
+                <li class="nav-item border-bottom {{active(route('change_password'))}}">
+                    <a href="{{route('change_password')}}" class="list-group-item list-group-item-action bg-fa">تغییر رمزعبور</a>
+                </li>
+                <li class="nav-item {{active(route('profile_edit'))}}">
+                    <a href="{{route('profile_edit')}}" class="list-group-item list-group-item-action bg-fa">تصاویر و درباره من</a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="nav-item border-bottom">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">تنظیمات</a>
+        </li>
+        <li class="nav-item border-bottom">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">دیدگاه ها</a>
+        </li>
+        <li class="nav-item border-bottom">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">تیکت ها</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">دانلود ها</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">پرداخت ها</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">درآمد</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">فروش</a>
+        </li>
+
+        <li class="nav-item ">
+            <a href="#ali" class="d-flex justify-content-between list-group-item border-bottom-0 list-group-item-action bg-light dropdown" data-toggle="collapse" aria-expanded="true"> dropdown  <i class="fas fa-angle-down"></i></a>
+            <ul class="list-group list-style-none navbar-nav list-group-flush pr-2 w-100 collapse " id="ali" >
+                <li class="nav-item">
+                    <a href="#" class="list-group-item list-group-item-action bg-fa">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="list-group-item list-group-item-action bg-fa">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="list-group-item list-group-item-action bg-fa">Dashboard</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">Dashboard</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="list-group-item list-group-item-action bg-fa">Dashboard</a>
+        </li>
+
+
+
+    </ul>
+</div>
+
+
+@section('script')
+  <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#usersidebar").toggleClass("toggled");
+      });
+  </script>
+    @endsection
